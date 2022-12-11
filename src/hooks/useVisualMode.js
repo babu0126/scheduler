@@ -14,7 +14,8 @@ function transition(newMode, replace = false) {
   }
 };
 function back() {
-  history.pop();
+  const newHistory = [...history].pop(); 
+  setHistory(newHistory);
   if(history.length >= 1) {
     setMode(history[history.length-1]);
   }

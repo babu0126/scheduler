@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "components/Appointment/styles.scss";
 import Header from "components/Appointment/Header";
 import Show from "components/Appointment/Show";
@@ -77,8 +77,8 @@ export default function Appointment(props) {
 
       {mode === EDIT && (
         <Form
-        name={props.interview.student}
-        interviewer={props.interview.interviewer.id}
+        name={props.name ? props.name: props.interview.student}
+        value={props.value? props.value: props.interview.interviewer.id}
         interviewers={props.interviewers}
         onCancel={back}
         onSave={save}
