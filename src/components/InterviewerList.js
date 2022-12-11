@@ -23,8 +23,12 @@ export default function InterviewerList(props) {
         )})}
       </ul>
     </section>
-
   );
+};
+
+InterviewerList.propTypes = {
+  value: PropTypes.number,
+  onChange: PropTypes.func.isRequired
 };
 
 

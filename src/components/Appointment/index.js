@@ -22,6 +22,7 @@ const ERROR_DELETING = 'ERROR_DELETING';
 
 
 export default function Appointment(props) {
+  console.log("appointment index", props)
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
@@ -77,8 +78,8 @@ export default function Appointment(props) {
 
       {mode === EDIT && (
         <Form
-        name={props.name ? props.name : props.interview.student}
-        value={props.value? props.value : props.interview.interviewer.id}
+        name={props.interview.student}
+        value={props.interview.interviewer.id}
         interviewers={props.interviewers}
         onCancel={back}
         onSave={save}
