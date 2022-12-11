@@ -36,7 +36,10 @@ npm run storybook
 ```sh
 npm start
 ```
-Link: https://localhost:8001
+Link1: https://localhost:8001/api/days
+Link2: https://localhost:8001/api/appointments
+Link3: https://localhost:8001/api/interviewers
+
 
 ## Screenshots/ Video
 
