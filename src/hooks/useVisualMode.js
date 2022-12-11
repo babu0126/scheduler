@@ -5,19 +5,15 @@ const [mode, setMode] = useState(initial);
 const [history, setHistory] = useState([initial]);
 
 function transition(newMode, replace = false) {
-  if (replace) {
-    setMode(newMode);
-    setHistory((prev) => [...prev]);
-  } else {
-    setMode(newMode);
-    setHistory((prev) => [...prev, newMode])
-  }
+  setMode(newMode);
+  replace ? setHistory((prev) => [...prev]) : setHistory((prev) => [...prev, newMode]);
 };
 function back() {
-  const newHistory = [...history].pop(); 
+  const newHistory = [...history];
+  newHistory.pop();
   setHistory(newHistory);
   if(history.length >= 1) {
-    setMode(history[history.length-1]);
+    setMode(newHistory[newHistory.length-1]);
   }
 };
 return {mode, transition, back};
